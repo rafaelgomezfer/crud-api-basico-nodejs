@@ -19,6 +19,14 @@ app.get('/api/users', (req, res)=>{
     })
 });
 
+app.post('/api/users', (req, res)=>{
+    usersDB.push(req.body);
+    res.status(201).send({
+        success: 'true',
+        message:'Data added successfully'
+    })
+});
+
 app.listen(PORT, ()=>{
     console.log(`server runnning on port ${PORT}`);
 })
